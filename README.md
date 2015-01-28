@@ -18,14 +18,16 @@ docker run -it --name=hyperdex-client umatomba/hyperdex-client python2.7
 - Connect with hyperdex:
                 a = hyperdex.admin.Admin('192.168.100.1', 1982)
 - Run:
-                a.add_space('''
-                space usertable
-                key k
-                attributes field0, field1, field2, field3, field4,
-                                   field5, field6, field7, field8, field9
-                create 24 partitions
-                tolerate 1 failure
-                  ''')
+```
+a.add_space('''
+space usertable
+key k
+attributes field0, field1, field2, field3, field4,
+                   field5, field6, field7, field8, field9
+create 24 partitions
+tolerate 1 failure
+  ''')
+```
 
 ### Note 2: The docker hyperdex image: 
 umatomba/docker-hyperdex:1.6
