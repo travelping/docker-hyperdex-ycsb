@@ -76,6 +76,6 @@ ENV CLASSPATH $CLASSPATH:/hyperdex_build/hyperdex-1.6.0/bindings/java/org.hyperd
 
 RUN ldconfig
 
-VOLUME /hyperdex_build
+VOLUME /hyperdex_build/ycsb-0.1.4
 
 CMD /bin/bash
