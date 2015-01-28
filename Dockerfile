@@ -20,7 +20,7 @@ RUN wget http://rpm5.org/files/popt/popt-1.16.tar.gz && tar xzf popt-1.16.tar.gz
 WORKDIR /hyperdex_build/popt-1.16
 RUN autoreconf -i;./configure && make && make install
 
-ENV PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/
+ENV PKG_CONFIG_PATH /usr/local/lib/pkgconfig/
 
 WORKDIR /hyperdex_build
 RUN wget http://hyperdex.org/src/libpo6-0.6.0.tar.gz && tar xzf libpo6-0.6.0.tar.gz
@@ -65,14 +65,14 @@ RUN autoreconf -i;./configure && make && make install
 WORKDIR /hyperdex_build
 RUN wget https://github.com/downloads/brianfrankcooper/YCSB/ycsb-0.1.4.tar.gz && tar zxf ycsb-0.1.4.tar.gz
 
-ENV CLASSPATH=$CLASSPATH:/hyperdex_build/ycsb-0.1.4/core/lib/core-0.1.4.jar
+ENV CLASSPATH $CLASSPATH:/hyperdex_build/ycsb-0.1.4/core/lib/core-0.1.4.jar
 
 WORKDIR /hyperdex_build
 RUN wget http://hyperdex.org/src/hyperdex-1.6.0.tar.gz && tar xzf hyperdex-1.6.0.tar.gz
 WORKDIR /hyperdex_build/hyperdex-1.6.0
 RUN autoreconf -i;./configure --enable-java-bindings --enable-ycsb && make && make install
 
-ENV CLASSPATH=$CLASSPATH:/hyperdex_build/hyperdex-1.6.0/bindings/java/org.hyperdex.client-1.6.0.jar:/hyperdex_build/hyperdex-1.6.0/bindings/java/org.hyperdex.ycsb-1.6.0.jar
+ENV CLASSPATH $CLASSPATH:/hyperdex_build/hyperdex-1.6.0/bindings/java/org.hyperdex.client-1.6.0.jar:/hyperdex_build/hyperdex-1.6.0/bindings/java/org.hyperdex.ycsb-1.6.0.jar
 
 RUN ldconfig
 
